@@ -1,12 +1,27 @@
 from fastapi import FastAPI, HTTPException
 from src.infra.database.config import criar_db, drop_db, engine
 import src.infra.database.models
+from fastapi.middleware.cors import CORSMiddleware 
 from sqlalchemy import inspect
 
 
 
 
 app = FastAPI()
+
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "*",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/teste")
@@ -31,7 +46,7 @@ def remove_db():
     return {"message": "Database cleared"}
 
 ## Endpoint Utilizado Para Teste de Banco de dados
-@app.post("/database/create")
+@app.get("/database/create")
 def create_db():
 
     inspector = inspect(engine)
