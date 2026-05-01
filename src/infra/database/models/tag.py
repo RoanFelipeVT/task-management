@@ -1,9 +1,9 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from src.infra.database.config import Base
+from src.infra.database.connection import Base
 from .associations import task_tag
 
-class TagModel(Base):
+class Tag(Base):
     __tablename__ = 'tag'
 
     id = Column(Integer, primary_key=True, index=True)

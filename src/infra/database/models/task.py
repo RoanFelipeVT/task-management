@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
-from src.infra.database.config import Base
+from src.infra.database.connection import Base
 from .associations import task_tag
 
-class TaskModel(Base):
+class Task(Base):
     __tablename__ = 'task'
 
     id = Column(Integer, primary_key=True, index=True)
