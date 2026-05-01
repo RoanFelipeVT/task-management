@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from config import settings
+from config import settings 
 
 
 
@@ -13,10 +13,10 @@ Base = declarative_base()
 
 
 def criar_db():
-    return Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine)
 
 def drop_db():
-    return Base.metadata.drop_all(bind=engine)
+    Base.metadata.drop_all(bind=engine)
 
 
 def get_db():
