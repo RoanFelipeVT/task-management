@@ -1,6 +1,22 @@
+# Ambientes Virtuais 
+.venv/
 venv/
-__pycache__/
-*.pyc
+env/
+
+# Python 
+**/__pycache__/
+*.py[cod]
+*$py.class
+alembic/**/__pycache__/
+# Variáveis de Ambiente
 .env
-TODO.txt
-idea
+.env.test
+
+# Testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# VS Code
+.vscode/
+.devcontainer/
